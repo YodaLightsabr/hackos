@@ -13,11 +13,11 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 47.4% 11.2%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-
     --card: 0 0% 100%;
     --card-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
 
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
@@ -41,25 +41,25 @@
     --foreground: 213 31% 91%;
 
     --muted: 223 47% 11%;
-    --muted-foreground: 215.4 16.3% 56.9%;
-
-    --accent: 216 34% 17%;
-    --accent-foreground: 210 40% 98%;
+    --muted-foreground: 215.4 16.3% 70.9%;
 
     --popover: 224 71% 4%;
     --popover-foreground: 215 20.2% 65.1%;
 
-    --border: 216 34% 17%;
-    --input: 216 34% 17%;
-
     --card: 224 71% 4%;
     --card-foreground: 213 31% 91%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
 
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 1.2%;
 
     --secondary: 222.2 47.4% 11.2%;
     --secondary-foreground: 210 40% 98%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
@@ -78,4 +78,42 @@
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+}
+
+.dark body:has(.hackos-special-use-conic-bg) {
+  background-image: url('/bg-dark.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+:not(.dark) body:has(.hackos-special-use-conic-bg) {
+  background-image: url('/bg.png');
+  backdrop-filter: blur(10px);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.conic-background {
+  background: conic-gradient(from 297deg at 42% 0%, #FF0000 0%, #FF4D00 7%, #FFD600 22%, #9AE200 36%, #00FF38 42%, #00ADC5 48%, #0B23FF 59%, #AE01FF 77%, #FF00C7 92%, #FF008A 100%);
+}
+
+.conic-text {
+  background:conic-gradient(from 297deg at 33% -20%, #FF4646 0%, #FF4D00 7%, #FFD600 22%, #B8F040 36%, #82FF9D 42%, #65D9E9 48%, #6682FF 59%, #C851FF 76%, #FF54D9 92%, #FF6BBB 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+
+:not(.dark) .conic-text {
+  background:conic-gradient(from 297deg at 33% 0%, #FF4646 0%, #FF4D00 7%, #FFD600 22%, #B8F040 36%, #43A057 43%, #49B3C1 47%, #5D78ED 59%, #C749FF 77%, #E945C5 91%, #D94996 94%, #FF55B0 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
 }

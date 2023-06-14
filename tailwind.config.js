@@ -1,9 +1,11 @@
-const { fontFamily } = require("tailwindcss/defaultTheme")
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
+  content: [
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+	],
   theme: {
     container: {
       center: true,
@@ -15,6 +17,7 @@ module.exports = {
     extend: {
       colors: {
         border: "hsl(var(--border))",
+        conic: "conic-gradient(from 297deg at 42% 0%, #FF0000 0%, #FF4D00 7%, #FFD600 22%, #9AE200 36%, #00FF38 42%, #00ADC5 48%, #0B23FF 59%, #AE01FF 77%, #FF00C7 92%, #FF008A 100%);",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
@@ -49,12 +52,9 @@ module.exports = {
         },
       },
       borderRadius: {
-        lg: `var(--radius)`,
-        md: `calc(var(--radius) - 2px)`,
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
-      },
-      fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
       },
       keyframes: {
         "accordion-down": {
